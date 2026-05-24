@@ -1,6 +1,33 @@
 import { storyblokEditable } from "@storyblok/react";
 
 export default function Hero({ blok }: { blok: any }) {
+  if (blok?.title?.toLowerCase() === "galleri") {
+    return (
+      <section
+        {...storyblokEditable(blok)}
+        className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36"
+      >
+        <div className="mx-auto max-w-5xl">
+          <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">
+            {blok.title}
+          </h1>
+          <div className="max-w-3xl space-y-6 text-[#505050]">
+            {blok.text
+              ?.split(/\n\s*\n/)
+              .map((paragraph: string) => (
+                <p
+                  key={paragraph}
+                  className="text-lg leading-relaxed md:text-xl"
+                >
+                  {paragraph}
+                </p>
+              ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   switch (blok?.variant) {
     case "home":
       return (
@@ -92,9 +119,53 @@ export default function Hero({ blok }: { blok: any }) {
 
     case "kontakt":
       return (
-        <section {...storyblokEditable(blok)}>
-          <h1>{blok.title}</h1>
-          <p>{blok.text}</p>
+        <section
+          {...storyblokEditable(blok)}
+          className="bg-[#F5EDE0] px-8 py-16 md:px-20 lg:px-36"
+        >
+          <div className="mx-auto max-w-7xl">
+            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">
+              {blok.title}
+            </h1>
+            <div className="max-w-3xl space-y-6 text-[#505050]">
+              {blok.text
+                ?.split(/\n\s*\n/)
+                .map((paragraph: string) => (
+                  <p
+                    key={paragraph}
+                    className="text-lg leading-relaxed md:text-xl"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case "galleri":
+      return (
+        <section
+          {...storyblokEditable(blok)}
+          className="bg-[#F5EDE0] px-8 py-14 md:px-20 md:py-20 lg:px-36"
+        >
+          <div className="mx-auto max-w-5xl">
+            <h1 className="mb-6 font-serif text-4xl font-bold text-[#282828] md:text-5xl">
+              {blok.title}
+            </h1>
+            <div className="max-w-3xl space-y-6 text-[#505050]">
+              {blok.text
+                ?.split(/\n\s*\n/)
+                .map((paragraph: string) => (
+                  <p
+                    key={paragraph}
+                    className="text-lg leading-relaxed md:text-xl"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+          </div>
         </section>
       );
 

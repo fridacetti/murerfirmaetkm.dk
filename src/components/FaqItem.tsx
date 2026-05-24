@@ -12,7 +12,7 @@ export default function FaqItem({
   onToggle,
 }: FaqItemProps) {
   return (
-    <div className="border border-[#50543B]" {...storyblokEditable(blok)}>
+    <div {...storyblokEditable(blok)} className="border border-[#50543B]">
       <button
         type="button"
         onClick={onToggle}

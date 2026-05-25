@@ -20,6 +20,7 @@ import KontaktInfo from "@/components/KontaktInfo";
 import KontaktInfoCard from "@/components/KontaktInfoCard";
 import Inkluderet from "@/components/Inkluderet";
 import HeroCard from "@/components/HeroCard";
+import Button from "@/components/Button";
 import Galleri from "@/components/Galleri";
 
 export const initStoryblok = () => {
@@ -28,27 +29,28 @@ export const initStoryblok = () => {
     use: [apiPlugin],
     components: {
       homepagebuttons: HomePageButtons,
-      page: Page,
-      hero: Hero,
-      herocard: HeroCard,
-      murercard: Murercard,
-      vaerdier: Vaerdier,
-      vaerdicard: VaerdiCard,
-      ydelser: Ydelser,
-      ydelsercard: YdelserCard,
-      kundeanmeldelser: Kundeanmeldelser,
-      kundeanmeldelsercard: KundeanmeldelserCard,
-      tidligereprojekter: TidligereProjekter,
-      kontaktforside: KontaktForside,
-      faq: Faq,
-      faqitem: FaqItem,
-      tidligereydelse: TidligereYdelse,
-      procesydelsecard: ProcesYdelseCard,
-      procesydelse: ProcesYdelse,
-      kontaktinfo: KontaktInfo,
-      kontaktinfocard: KontaktInfoCard,
-      inkluderet: Inkluderet,
-      galleri: Galleri,
+        page: Page,
+        hero: Hero,
+        herocard: HeroCard,
+        murercard: Murercard,
+        vaerdier: Vaerdier,
+        vaerdicard: VaerdiCard,
+        ydelser: Ydelser,
+        ydelsercard: YdelserCard,
+        kundeanmeldelser: Kundeanmeldelser,
+        kundeanmeldelsercard: KundeanmeldelserCard,
+        tidligereprojekter: TidligereProjekter,
+        kontaktforside: KontaktForside,
+        faq: Faq,
+        faqitem: FaqItem,
+        tidligereydelse: TidligereYdelse,
+        procesydelsecard: ProcesYdelseCard,
+        procesydelse: ProcesYdelse,
+        kontaktinfo: KontaktInfo,
+        kontaktinfocard: KontaktInfoCard,
+        inkluderet: Inkluderet,
+        button: Button,
+        galleri: Galleri,
     },
   });
 };

@@ -263,7 +263,7 @@ export default function Form() {
               </label>
             </div>
             <div className="flex justify-end mt-4 pb-6">
-              <button type="submit" className="bg-[#B64430] text-white font-semibold py-3 px-8 rounded shadow transition hover:bg-[#a13b28] disabled:opacity-60 disabled:cursor-not-allowed" disabled={isSubmitting}>
+              <button type="submit" className="bg-[var(--cta)] text-[var(--tekst2)] border-[var(--cta)] hover:brightness-90 font-montserrat rounded-md border px-6 py-3 text-lg font-medium transition hover:brightness-90 disabled:opacity-60 disabled:cursor-not-allowed" disabled={isSubmitting}>
                 {isSubmitting ? "Sender..." : "Send besked"}
               </button>
             </div>

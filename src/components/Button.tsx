@@ -16,7 +16,10 @@ export default function Button({ blok }: { blok: any }) {
       {...storyblokEditable(blok)}
       href={blok.link?.cached_url || "/"}
       className={`
-        inline-flex w-fit items-center justify-center rounded-md border px-6 py-3 text-lg font-medium transition hover:brightness-90
+       relative z-20
+        inline-flex w-fit items-center justify-center
+        rounded-md border px-6 py-3 text-lg font-medium
+        transition hover:brightness-90
         ${variantClass}
       `}
     >

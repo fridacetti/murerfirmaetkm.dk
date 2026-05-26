@@ -18,7 +18,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-primary px-6 shadow-md md:px-20">
       <div className="flex items-center justify-between py-3 md:py-1">
         <a href="/" aria-label="Kongsbro og Machado forsiden">
-          <img src="/MKMlogo-09.png" alt="Kongsbro og Machado" className="w-[100px] object-contain md:w-[90px]" />
+          <img src="/MKMlogo-09.png" alt="Kongsbro og Machado" className="w-[100px] object-contain md:w-[110px]" />
         </a>
 
         <button type="button" onClick={() => setIsOpen(true)} aria-label="Aabn menu" className="flex flex-col gap-1 md:hidden">

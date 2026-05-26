@@ -7,7 +7,7 @@ const icons = {
   clock: HiClock,
 };
 
-export default function KontaktInfoCard({ blok }: { blok: any }) {
+export default function KontaktInfo({ blok }: { blok: any }) {
   const Icon = icons[blok.icon as keyof typeof icons];
   return (
     <div {...storyblokEditable(blok)}>

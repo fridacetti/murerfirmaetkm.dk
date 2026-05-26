@@ -23,6 +23,7 @@ import Button from "@/components/Button";
 import Galleri from "@/components/Galleri";
 import Formular from "@/components/Formular";
 import Form from "@/components/Form";
+import IconCard from "@/components/IconCard";
 
 export const initStoryblok = () => {
   storyblokInit({
@@ -53,6 +54,7 @@ export const initStoryblok = () => {
       galleri: Galleri,
       formular: Formular,
       form: Form,
+      iconcard: IconCard,
     },
   });
 };

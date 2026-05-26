@@ -42,7 +42,7 @@ export default function Footer() {
 
         {/* Kontaktinformation og sociale links */}
         <section className="flex flex-col items-center gap-8 text-center text-tekst2">
-          <h2 className="subtitle italic underline decoration-white underline-offset-4">Kontakt os</h2>
+          <p className="bodytext italic underline decoration-white underline-offset-4">Kontakt os</p>
 
           <div className="flex flex-col items-center gap-7">
             <p className="bodytext">Hyben Alle 18, 2770 Kastrup</p>

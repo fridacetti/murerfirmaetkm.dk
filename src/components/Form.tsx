@@ -22,20 +22,22 @@ export default function Form() {
     formState: { errors },
   } = useForm<FormData>({ mode: "onChange" });
 
-  const onSubmit = (data: FormData) => {
-    // Opret FormData og tilføj alle felter og billeder
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("phone", data.phone);
-    formData.append("email", data.email);
-    formData.append("address", data.address);
-    formData.append("zip", data.zip);
-    formData.append("message", data.message);
-    selectedFiles.forEach((file, idx) => {
-      formData.append("images", file);
+  const onSubmit = async (data: FormData) => {
+    // Send data til din API route
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...data,
+        // Tilføj evt. flere felter her hvis nødvendigt
+      }),
     });
-    // Her kan du sende formData til backend med fetch/Axios
-    alert(`Formularen er klar til upload! Antal billeder: ${selectedFiles.length}`);
+    const result = await res.json();
+    if (result.success) {
+      alert("Din besked er sendt!");
+    } else {
+      alert("Noget gik galt. Prøv igen.");
+    }
   };
   // Funktion til at vise billede-preview
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

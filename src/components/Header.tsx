@@ -37,7 +37,7 @@ export default function Header() {
 
             {dropdownOpen && (
               <div className="absolute left-0 top-full mt-0 flex min-w-44 flex-col bg-primary shadow-md">
-                {serviceLinks.map((link) => (
+                {serviceLinks.map((link) => ( //service links er arrayet med links til ydelsessiderne
                   <a key={link.href} href={link.href} className="p-4 hover:bg-tertiary">
                     {link.label}
                   </a>
@@ -71,9 +71,12 @@ export default function Header() {
           </button>
 
           {dropdownOpen && (
-            <div className="mt-3 flex flex-col gap-3 pl-4">
+            <div className="mt-3 flex flex-col gap-3 pl-4"> 
+              {/* map går igennem alle links i serviceLinks og laver et link for hver. */}
               {serviceLinks.map((link) => (
-                <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+                // key hjælper React med at kende forskel på linksene. href er siden linket går til.
+                <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}> 
+                  {/* label er teksten, som brugeren kan se i menuen. */}
                   {link.label}
                 </a>
               ))}

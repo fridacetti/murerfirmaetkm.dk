@@ -14,9 +14,8 @@ export default function Formular({ blok }: { blok: any }) {
         <Form />
       </div>
 
-    {/* Højre side */}
-      <div className="flex flex-col gap-8 md:ml-[159px] px-8 py-10">
-
+      {/* Højre side */}
+      <div className="flex flex-col gap-8 md:ml-[159px] px-8 py-10 overflow-hidden">
         {/* Inkluderet – først på mobil, sidst på desktop */}
         <div className="order-1 md:order-2">
           {blok.inkluderet?.map((item: any) => (
@@ -30,7 +29,7 @@ export default function Formular({ blok }: { blok: any }) {
             <KontaktInfo key={item._uid} blok={item} />
           ))}
         </div>
-        </div>
+      </div>
     </section>
   );
 }

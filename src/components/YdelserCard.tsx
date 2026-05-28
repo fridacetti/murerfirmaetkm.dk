@@ -6,7 +6,7 @@ export default function YdelserCard({ blok }: { blok: any }) {
 
   return (
     <div {...storyblokEditable(blok)} className="image-radius group relative aspect-[290/391] overflow-hidden text-left">
-      {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt || blok.sectiontitle || ""} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />}
+      {blok.image?.filename && <img src={blok.image.filename} alt={blok.image.alt} className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />}
 
       <div className="absolute inset-0 bg-tekst1/35 transition-colors duration-300 group-hover:bg-tekst1/50" />
 

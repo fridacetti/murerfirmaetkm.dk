@@ -1,10 +1,10 @@
 import { storyblokEditable } from "@storyblok/react";
 import { FiHome } from "react-icons/fi";
 import { GiTrowel } from "react-icons/gi";
-import { PiMedalThin } from "react-icons/pi"; // ← tilføjet
+import { PiMedalThin } from "react-icons/pi"; 
 
 const getIcon = (title?: string) => {
-  if (title?.toLowerCase() === "håndværk") {
+  if (title?.toLowerCase() === "håndværk") { //hvis title er "håndværk", returner det rigtige ikonet
     return GiTrowel;
   }
 
@@ -16,7 +16,7 @@ const getIcon = (title?: string) => {
 };
 
 export default function VaerdiCard({ blok }: { blok: any }) {
-  const Icon = getIcon(blok.title);
+  const Icon = getIcon(blok.title); //hent det rigtige ikon baseret på title
 
   return (
     <article {...storyblokEditable(blok)} className="flex flex-col items-center text-center">

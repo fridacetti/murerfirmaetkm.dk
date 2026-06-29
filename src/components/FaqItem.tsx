@@ -7,39 +7,17 @@ type FaqItemProps = {
   onToggle?: () => void;
 };
 
-export default function FaqItem({
-  blok,
-  isOpen = false,
-  onToggle,
-}: FaqItemProps) {
+export default function FaqItem({ blok, isOpen = false, onToggle }: FaqItemProps) {
   return (
     <div {...storyblokEditable(blok)} className="border border-secondary">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-6 px-6 py-4 text-left"
-      >
-        <span className="font-serif text-xl font-bold text-tekst1">
-          {blok.question}
-        </span>
-        <IoIosArrowDown
-          aria-hidden="true"
-          className={`h-5 w-5 shrink-0 text-secondary transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+      <button type="button" onClick={onToggle} aria-expanded={isOpen} className="flex w-full items-center justify-between gap-6 px-6 py-4 text-left">
+        <span className="font-serif text-xl font-bold text-tekst1">{blok.question}</span>
+        <IoIosArrowDown aria-hidden="true" className={`h-5 w-5 shrink-0 text-secondary transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
+      <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
         <div className="overflow-hidden">
-          <p className="bodytext px-6 pb-5 pt-1 text-tekst1">
-            {blok.answer}
-          </p>
+          <p className="bodytext px-6 pb-5 pt-1 text-tekst1">{blok.answer}</p>
         </div>
       </div>
     </div>

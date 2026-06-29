@@ -14,6 +14,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  // FÆLLES STYLING (Desktop)
+  const navLinkClass = "flex cursor-pointer items-center gap-1 hover:text-secondary transition-colors text-tekst1";
+
   return (
     <header className="sticky top-0 z-50 bg-primary px-6 shadow-md md:px-20">
       <div className="flex items-center justify-between py-3 md:py-1">
@@ -31,13 +34,17 @@ export default function Header() {
         <nav className="hidden items-center gap-20 text-tekst1 md:flex">
           {/* Dropdown med ydelsessider */}
           <div className="relative" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
-            <button type="button" className="flex cursor-pointer items-center gap-1 hover:text-secondary">
-              Murerarbejde <IoIosArrowDown />
+            {/* 
+              RETNING DESKTOP: Vi ændrer fontWeight fra 'inherit' til 'normal' (400).
+              Det tvinger knappen ud af sin 300-light vægt, så den matcher 'body' og dine <a> links.
+            */}
+            <button type="button" className={navLinkClass} style={{ fontWeight: "normal", fontFamily: "inherit" }}>
+              Murerarbejde <IoIosArrowDown className="text-xs" />
             </button>
 
             {dropdownOpen && (
               <div className="absolute left-0 top-full mt-0 flex min-w-44 flex-col bg-primary shadow-md">
-                {serviceLinks.map((link) => ( //service links er arrayet med links til ydelsessiderne
+                {serviceLinks.map((link) => (
                   <a key={link.href} href={link.href} className="p-4 hover:bg-tertiary">
                     {link.label}
                   </a>
@@ -46,13 +53,13 @@ export default function Header() {
             )}
           </div>
 
-          <a href="/om-os" className="hover:text-secondary">
+          <a href="/om-os" className={navLinkClass}>
             Om os
           </a>
-          <a href="/galleri" className="hover:text-secondary">
+          <a href="/galleri" className={navLinkClass}>
             Galleri
           </a>
-          <a href="/kontakt-os" className="hover:text-secondary">
+          <a href="/kontakt-os" className={navLinkClass}>
             Kontakt
           </a>
         </nav>
@@ -66,17 +73,18 @@ export default function Header() {
 
         {/* Mobil dropdown med ydelsessider */}
         <div>
-          <button type="button" onClick={() => setDropdownOpen(!dropdownOpen)} className="flex items-center gap-2 text-lg font-semibold">
+          {/* 
+            RETNING MOBIL: Vi sikrer os også her, at fontWeight står til 'normal' (400),
+            så den spejler dine andre mobile <a> tags fuldstændigt.
+          */}
+          <button type="button" onClick={() => setDropdownOpen(!dropdownOpen)} className="flex items-center gap-2 text-tekst1" style={{ fontWeight: "normal", fontFamily: "inherit" }}>
             Murerarbejde <IoIosArrowDown />
           </button>
 
           {dropdownOpen && (
-            <div className="mt-3 flex flex-col gap-3 pl-4"> 
-              {/* map går igennem alle links i serviceLinks og laver et link for hver. */}
+            <div className="mt-3 flex flex-col gap-3 pl-4">
               {serviceLinks.map((link) => (
-                // key hjælper React med at kende forskel på linksene. href er siden linket går til.
-                <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}> 
-                  {/* label er teksten, som brugeren kan se i menuen. */}
+                <a key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
                   {link.label}
                 </a>
               ))}
@@ -84,13 +92,13 @@ export default function Header() {
           )}
         </div>
 
-        <a href="/om-os" onClick={() => setIsOpen(false)} className="text-lg font-semibold">
+        <a href="/om-os" onClick={() => setIsOpen(false)}>
           Om os
         </a>
-        <a href="/galleri" onClick={() => setIsOpen(false)} className="text-lg font-semibold">
+        <a href="/galleri" onClick={() => setIsOpen(false)}>
           Galleri
         </a>
-        <a href="/kontakt-os" onClick={() => setIsOpen(false)} className="text-lg font-semibold">
+        <a href="/kontakt-os" onClick={() => setIsOpen(false)}>
           Kontakt
         </a>
       </nav>

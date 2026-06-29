@@ -33,7 +33,7 @@ export default function Galleri({ blok }: { blok: any }) {
     setActiveIndex(getIndex(activeIndex + 1, billeder.length));
   };
 
-  return ( 
+  return (
     <section {...storyblokEditable(blok)} className="bg-[#DADCCE] px-0 pb-4 pt-6 md:px-0">
       <div className="mx-auto max-w-5xl">
         <div className="relative overflow-hidden px-4 pt-0 md:px-0 md:pt-1">
@@ -61,7 +61,6 @@ export default function Galleri({ blok }: { blok: any }) {
               <IoIosArrowBack className="text-3xl md:text-4xl" />
             </button>
 
-      
             <button type="button" aria-label="Næste billede" onClick={showNextImage} className="absolute right-4 top-1/2 z-30 flex h-12 w-14 -translate-y-1/2 items-center justify-center rounded-md bg-[#C44931] text-white shadow-lg shadow-black/20 transition hover:bg-[#A93B27] md:right-[15.5%] md:h-14 md:w-16">
               <IoIosArrowForward className="text-3xl md:text-4xl" />
             </button>
@@ -70,17 +69,22 @@ export default function Galleri({ blok }: { blok: any }) {
 
         {/* De små billeder nederst bruges til at vælge et bestemt billede. */}
         <div className="mt-10 grid grid-cols-3 gap-3 px-4 sm:grid-cols-4 md:grid-cols-6 md:px-8 md:pb-8 lg:grid-cols-8">
-          {billeder.map((billede: any, index: number) => (  //any og number er pga typescript
-            <button
-              key={billede._uid}
-              type="button"
-              // Når man klikker på et thumbnail-billede, bliver det det aktive billede.
-              onClick={() => setActiveIndex(index)}
-              className={`overflow-hidden rounded-2xl border-2 transition ${index === activeIndex ? "border-[#C44931]" : "border-transparent hover:border-[#C44931]/60"}`}
-            >
-              <img src={billede.image?.filename} alt={billede.image?.alt || billede.label || ""} className="h-24 w-full object-cover" />
-            </button>
-          ))}
+          {billeder.map(
+            (
+              billede: any,
+              index: number, //any og number er pga typescript
+            ) => (
+              <button
+                key={billede._uid}
+                type="button"
+                // Når man klikker på et thumbnail-billede, bliver det det aktive billede.
+                onClick={() => setActiveIndex(index)}
+                className={`overflow-hidden rounded-2xl border-2 transition ${index === activeIndex ? "border-[#C44931]" : "border-transparent hover:border-[#C44931]/60"}`}
+              >
+                <img src={billede.image?.filename} alt={billede.image?.alt || billede.label || ""} className="h-24 w-full object-cover" />
+              </button>
+            ),
+          )}
         </div>
       </div>
     </section>

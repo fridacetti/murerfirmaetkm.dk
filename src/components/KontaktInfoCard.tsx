@@ -1,5 +1,4 @@
 import { storyblokEditable } from "@storyblok/react";
-
 import { HiPhone, HiMail, HiClock } from "react-icons/hi";
 
 const icons = {
@@ -18,7 +17,11 @@ export default function KontaktInfoCard({ blok }: { blok: any }) {
       <div>
         <h3 className="sectiontitle">{blok.sectiontitle}</h3>
 
-        <p className="bodytext">{blok.text}</p>
+        {/* Vi stabler text og text2 under hinanden vha. en flex-col container */}
+        <div className="flex flex-col gap-0.5">
+          {blok.text && <p className="bodytext">{blok.text}</p>}
+          {blok.text2 && <p className="bodytext">{blok.text2}</p>}
+        </div>
       </div>
     </div>
   );

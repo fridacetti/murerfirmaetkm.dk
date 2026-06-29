@@ -8,8 +8,6 @@ export default function Footer() {
         {/* Logo og kort tekst */}
         <section className="flex flex-col items-center text-center md:items-start md:text-left">
           <img src="/MKMlogo-09.png" alt="Kongsbro & Machado" className="mb-10 w-46 brightness-0 invert md:w-52" />
-
-          <p className="bodytext w-56 italic text-tekst2 md:w-72">Vi bygger på tillid, solidt dansk håndværk og princippet om, at en aftale er en aftale. Vi sikrer dig gennemsigtige priser og høj kvalitet gennem hele projektet.</p>
         </section>
 
         {/* Links til ydelser og undersider */}
@@ -42,20 +40,33 @@ export default function Footer() {
 
         {/* Kontaktinformation og sociale links */}
         <section className="flex flex-col items-center gap-8 text-center text-tekst2">
-          <p className="bodytext italic underline decoration-white underline-offset-4">Kontakt os</p>
+          <a href="/kontakt-os" className="bodytext italic underline decoration-white underline-offset-4">
+            Kontakt os
+          </a>
 
           <div className="flex flex-col items-center gap-7">
             <p className="bodytext">Hyben Alle 18, 2770 Kastrup</p>
             <p className="bodytext">CVR: 46412427</p>
 
-            <div className="flex items-center gap-5">
-              <FiPhone className="text-sm" />
-              <span>+45 12 34 56 78</span>
+            <div className="flex flex-col gap-2">
+              {/* Første nummer med ikon ved siden af */}
+              <div className="flex items-center gap-2">
+                <FiPhone className="text-sm" />
+                <span>+45 31 74 11 47</span>
+              </div>
+
+              {/* Andet nummer med ikon ved siden af */}
+              <div className="flex items-center gap-2">
+                <FiPhone className="text-sm" />
+                <span>+45 31 74 12 47</span>
+              </div>
             </div>
 
             <div className="flex items-center gap-10 pt-4 text-tekst2">
               <FaFacebookSquare className="text-5xl" />
-              <FaInstagram className="text-5xl" />
+              <a href="https://www.instagram.com/murerfirmaetkm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <FaInstagram className="text-5xl" />
+              </a>
             </div>
           </div>
         </section>

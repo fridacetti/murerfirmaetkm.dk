@@ -46,8 +46,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Sender mailen med alle felter og evt. billeder som vedhæftning
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev", //Skal udskiftes med virksomhedens domæne, når de får et
-      to: "alre0003@stud.ek.dk", //Skal udskiftes med virksomhedens mail, når de har en
+      from: "Murerfirmaet KM <kontakt@murerfirmaetkm.dk>", //Skal udskiftes med virksomhedens domæne, når de får et
+      to: "kongsbromachado@gmail.com", //Skal udskiftes med virksomhedens mail, når de har en
       subject: "Ny kontaktformular besked",
       html: `<p><strong>Navn:</strong> ${fields.name}</p>
              <p><strong>Telefon:</strong> ${fields.phone}</p>

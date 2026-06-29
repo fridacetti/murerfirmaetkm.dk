@@ -1,4 +1,5 @@
-import { getStoryblokApi, StoryblokComponent } from "@storyblok/react";
+import { StoryblokComponent } from "@storyblok/react/ssr";
+import { getStoryblokApi } from "@/lib/storyblok";
 
 export default async function DynamicPage(props: { params: Promise<{ slug?: string[] }> }) {
   const { slug } = await props.params;

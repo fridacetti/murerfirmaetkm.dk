@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { initStoryblok } from "@/lib/storyblok";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { EB_Garamond } from "next/font/google";
@@ -9,8 +8,6 @@ const ebGaramond = EB_Garamond({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-
-initStoryblok();
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -1,4 +1,4 @@
-import { storyblokInit, apiPlugin } from "@storyblok/react";
+import { storyblokInit, apiPlugin } from "@storyblok/react/ssr";
 import Page from "@/components/Page";
 import Hero from "@/components/Hero";
 import Murercard from "@/components/Murercard";
@@ -25,36 +25,34 @@ import Formular from "@/components/Formular";
 import Form from "@/components/Form";
 import IconCard from "@/components/IconCard";
 
-export const initStoryblok = () => {
-  storyblokInit({
-    accessToken: process.env.STORYBLOK_API_TOKEN,
-    use: [apiPlugin],
-    components: {
-      page: Page,
-      hero: Hero,
-      herocard: HeroCard,
-      murercard: Murercard,
-      vaerdier: Vaerdier,
-      vaerdicard: VaerdiCard,
-      ydelser: Ydelser,
-      ydelsercard: YdelserCard,
-      kundeanmeldelser: Kundeanmeldelser,
-      kundeanmeldelsercard: KundeanmeldelserCard,
-      tidligereprojekter: TidligereProjekter,
-      kontaktforside: KontaktForside,
-      faq: Faq,
-      faqitem: FaqItem,
-      tidligereydelse: TidligereYdelse,
-      procesydelsecard: ProcesYdelseCard,
-      procesydelse: ProcesYdelse,
-      kontaktinfo: KontaktInfo,
-      kontaktinfocard: KontaktInfoCard,
-      inkluderet: Inkluderet,
-      button: Button,
-      galleri: Galleri,
-      formular: Formular,
-      form: Form,
-      iconcard: IconCard,
-    },
-  });
-};
+export const getStoryblokApi = storyblokInit({
+  accessToken: process.env.STORYBLOK_API_TOKEN,
+  use: [apiPlugin],
+  components: {
+    page: Page,
+    hero: Hero,
+    herocard: HeroCard,
+    murercard: Murercard,
+    vaerdier: Vaerdier,
+    vaerdicard: VaerdiCard,
+    ydelser: Ydelser,
+    ydelsercard: YdelserCard,
+    kundeanmeldelser: Kundeanmeldelser,
+    kundeanmeldelsercard: KundeanmeldelserCard,
+    tidligereprojekter: TidligereProjekter,
+    kontaktforside: KontaktForside,
+    faq: Faq,
+    faqitem: FaqItem,
+    tidligereydelse: TidligereYdelse,
+    procesydelsecard: ProcesYdelseCard,
+    procesydelse: ProcesYdelse,
+    kontaktinfo: KontaktInfo,
+    kontaktinfocard: KontaktInfoCard,
+    inkluderet: Inkluderet,
+    button: Button,
+    galleri: Galleri,
+    formular: Formular,
+    form: Form,
+    iconcard: IconCard,
+  },
+});

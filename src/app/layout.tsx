@@ -11,12 +11,24 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Murerfirmaet Kongsbro & Machado",
-  description: "Murerfirmaet Kongsbro & Machado",
+  title: "Murerfirmaet Kongsbro & Machado – Professionelt murerarbejde",
+  description: "Murerfirmaet Kongsbro & Machado udfører professionelt murerarbejde i København og omegn. Kontakt os for kvalitet, erfaring og solidt håndværk.",
   icons: {
     icon: [{ url: favicon.src, type: "image/png" }],
   },
+  openGraph: {
+    title: "Murerfirmaet Kongsbro & Machado",
+    description: "Professionelt murerarbejde i København og omegn. Kvalitet, erfaring og solidt håndværk.",
+    url: "https://www.murerfirmaetkm.dk",
+    siteName: "Murerfirmaet Kongsbro & Machado",
+    locale: "da_DK",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.murerfirmaetkm.dk",
+  },
 };
+
 
 export default function RootLayout({
   children,

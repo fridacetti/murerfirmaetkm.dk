@@ -8,7 +8,7 @@ export default async function DynamicPage(props: { params: Promise<{ slug?: stri
 
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${resolvedSlug}`, {
-    version: "draft",
+    version: "published",
   });
 
   return (
